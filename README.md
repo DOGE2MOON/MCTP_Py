@@ -31,8 +31,8 @@ optimism_chain_dict = {
 
 # define amount to bridge and token addresses
 amount_in_human = 10 
-tokenIn = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
-tokenOut = '0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85'
+tokenIn = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913' # Base native USDC
+tokenOut = '0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85' # OP native USDC
 
 # instantiate the MCTP class using the account we made earlier
 # useful if you already have an account object in your script
