@@ -34,7 +34,8 @@ amount_in_human = 10
 tokenIn = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
 tokenOut = '0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85'
 
-# instantiate the MCTP class using the account we made earlier (useful if you already have an account object in your script)
+# instantiate the MCTP class using the account we made earlier
+# useful if you already have an account object in your script
 MCTPClient = MCTP(keystore_path=account, chain_dict=base_chain_dict)
 
 # or pass the keystore path instead
@@ -54,7 +55,12 @@ quote = quote[1]
 
 # Send the transaction
 # pass tokenInDecimals=False to fetch decimals from the contract; otherwise, pass an int
-tx_receipt = MCTPClient.forwardERC20(quote=quote, chain_dict=from_chain_dict, tokenInDecimals=False, poll_latency=0.5) 
+tx_receipt = MCTPClient.forwardERC20(
+  quote=quote,
+  chain_dict=from_chain_dict,
+  tokenInDecimals=False,
+  poll_latency=0.5
+) 
 print(tx_receipt)
 ```
 
