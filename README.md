@@ -1,5 +1,5 @@
 # MCTP_Py
-Mayan MCTP class written in Python
+Mayan [MCTP](https://docs.mayan.finance/architecture/mctp) class written in Python
 
 ## Example Usage: bridge 10 USDC from Base to Optimism using MCTP
 
