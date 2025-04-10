@@ -8,7 +8,7 @@ Mayan [MCTP](https://docs.mayan.finance/architecture/mctp) class written in Pyth
 from MCTP_Py import MCTP, instantiate_account, instantiate_chain_dict
 
 # (OPTIONAL) instantiate account object
-keystore_path = 'path/to/enctrypted/keystore'
+keystore_path = 'path/to/encrypted/keystore'
 account = instantiate_account(keystore_path)
 
 # instantiate chain dicts
