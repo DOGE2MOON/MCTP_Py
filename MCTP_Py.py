@@ -328,12 +328,13 @@ class MCTP(object):
 		return content
 
 
-	def forwardERC20(self, quote: dict, chain_dict: dict, tokenInDecimals: int):
+	def forwardERC20(self, quote: dict, chain_dict: dict, tokenInDecimals: int, poll_latency: float):
 		## Call forwardERC20 method on the Mayan Forwarder contract
 
 		## quote = dict; result of get_quote() from the Mayan API
 		## chain_dict = dict; dict containing relevant values for fromChain (web3 object, RPC URL)
 		## tokenInDecimals = int or bool; number of decimals that tokenIn uses, or False to fetch from the chain
+		## poll_latency = float, how often to wait between looking for the transaction
 		
 		web3 = chain_dict['web3']
 		forwarder_contract = web3.eth.contract(address=self.forwarder_address, abi=self.forwarder_abi)
@@ -392,7 +393,7 @@ class MCTP(object):
 
 		signed_tx = web3.eth.account.sign_transaction(tx, private_key=self.account.key)
 		send_tx = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
-		tx_receipt = web3.eth.wait_for_transaction_receipt(send_tx, timeout=60, poll_latency=0.5)
+		tx_receipt = web3.eth.wait_for_transaction_receipt(send_tx, timeout=60, poll_latency=poll_latency)
 
 		return tx_receipt
 
